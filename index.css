@@ -1,0 +1,44 @@
+/* Apply styles only on screens smaller than the md breakpoint (768px) */
+@media (max-width: 767px) {
+  .responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    width: 100%;
+    border-bottom: 1px solid #334155; /* slate-700 */
+  }
+
+  .responsive-table td:last-child {
+      border-bottom: none;
+  }
+  
+  /* Use the data-label attribute to create a label for each cell */
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: 600; /* semibold */
+    text-align: left;
+    color: #7dd3fc; /* sky-300 */
+    margin-right: 1rem; /* space between label and value */
+  }
+
+  /* First cell (Product Name) doesn't need a label and should be styled as a title */
+  .responsive-table td:first-child {
+    justify-content: flex-start;
+    font-weight: 600; /* semibold */
+    font-size: 1.125rem; /* text-lg */
+    color: #f1f5f9; /* slate-100 */
+    border-bottom: 1px solid #475569; /* slate-600 */
+  }
+  .responsive-table td:first-child::before {
+    content: ""; /* Hide label for product name */
+  }
+
+  /* The website link/button cell */
+  .responsive-table td[data-label="Website"] {
+    display: block; /* Make it a block to fill width */
+  }
+  .responsive-table td[data-label="Website"]::before {
+    display: none; /* Hide the label for the button container */
+  }
+}

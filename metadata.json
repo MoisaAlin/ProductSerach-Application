@@ -1,0 +1,6 @@
+{
+  "name": "Copy of my Gemini Product Search",
+  "description": "An application to search for products, identify their prices and websites using Gemini API with Google Search grounding, and display the results in a table.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
